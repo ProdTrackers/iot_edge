@@ -16,10 +16,10 @@ logging.basicConfig(
 )
 
 # URL del backend real (Railway)
-#BACKEND_URL = "https://backend-production-41be.up.railway.app/api/v1/iot-devices"
+BACKEND_URL = "https://backend-production-41be.up.railway.app/api/v1/iot-devices"
 
 # URL del backend local
-BACKEND_URL = "http://localhost:8000/api/v1/iot-devices"
+#BACKEND_URL = "http://localhost:8000/api/v1/iot-devices"
 
 # Lista de identificadores válidos (simulación de autenticidad)
 VALID_DEVICE_IDENTIFIERS = {"esp32-001"}
