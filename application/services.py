@@ -20,6 +20,10 @@ class DeviceService:
         if not device.is_valid(self.valid_identifiers):
             return {"error": "Dispositivo no autorizado"}, 403
 
+        # NUEVA LÓGICA: verificar si el dispositivo está reservado
+        if self.backend_client.is_device_reserved(data["inventoryId"]):
+            return {"error": "Dispositivo actualmente reservado"}, 409
+
         try:
             backend_response = self.backend_client.send_to_backend(data)
             return {
